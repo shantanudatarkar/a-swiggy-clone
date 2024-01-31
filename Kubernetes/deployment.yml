@@ -17,7 +17,11 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: swiggy-app
-        image: shan123456/docker_demo:${BUILD_NUMBER}
+        image: shan123456/docker_demo:latest
         imagePullPolicy: "Always"
+        env:
+        - name: BUILD_NUMBER
+          value: "${BUILD_NUMBER}"
+          imagePullPolicy: "Always"
         ports:
         - containerPort: 3000
